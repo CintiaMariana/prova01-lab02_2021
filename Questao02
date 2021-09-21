@@ -1,0 +1,35 @@
+package br.edu.univas;
+
+import java.util.Scanner;
+
+public class Questao02 {
+	public static void main (String [] args) {
+		Scanner leitura = new Scanner (System.in);
+		
+		String [] convidados = new String[50];
+		
+		for (int i = 0; i < 50; i++) {
+			System.out.println("Por favor, digite o nome do convidado: ");
+			convidados [i] = leitura.nextLine();	
+		}
+		
+		verificaConvidados(convidados);
+		
+		leitura.close();
+	}
+	
+	public static void verificaConvidados(String [] convidados) {
+		String [] novoConvidado = new String [50];
+		novoConvidado[0] = convidados [0];
+		
+		for (int i = 0; i < 50; i++) {
+			if (convidados[i] != novoConvidado[i]) {
+				novoConvidado[i] = convidados [i];
+			}
+			else {
+				System.out.println("Convidado " + convidados[i] + " já está incluso na lista!");
+			}
+		}
+	}
+
+}
