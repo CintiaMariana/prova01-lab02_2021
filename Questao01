@@ -1,0 +1,50 @@
+package br.edu.univas;
+
+import java.util.Scanner;
+
+public class Questao01 {
+	public static void main (String [] args) {
+		Scanner leitura = new Scanner (System.in);
+		
+		double [] notas = new double [25];
+		
+		for (int i = 0; i < 25; i++) {
+		System.out.println("Por favor, digite a nota: ");
+		notas[i] = leitura.nextDouble();
+		}
+		
+		double menorNota = verificaMenorNota(notas);
+		System.out.println("A menor nota digitada foi: " + menorNota);
+		
+		double maiorNota = verificaMaiorNota(notas);
+		System.out.println("A maior nota digitada foi: " + maiorNota);
+		
+		leitura.close();
+	}
+	
+	public static double verificaMenorNota(double [] notas) {
+		double notaMenor = notas[0];
+		
+		for (int i = 0; i < 25; i++) {
+			if (notas [i] < notaMenor) {
+				notaMenor = notas [i];
+			}
+			
+		}
+		return notaMenor;
+				
+	}
+	
+	public static double verificaMaiorNota(double [] notas) {
+		double notaMaior = notas[0];
+		
+		for (int i = 0; i < 25; i++) {
+			if (notas [i] > notaMaior) {
+				notaMaior = notas [i];
+			}
+			
+		}
+		return notaMaior;
+
+}
+}
